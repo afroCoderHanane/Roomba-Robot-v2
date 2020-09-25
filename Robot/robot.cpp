@@ -29,25 +29,25 @@ bool Robot::forward(){
   bool move = false;
   if(orientation==east&&rPos.getX()<10&&rPos.getY()<10){
     move = true;
-    cout<<"Robot is moving "<<static_cast<orientation_type>(orientation)<<endl;
+    cout<<"Robot is moving east"<<endl;
     rPos.set(rPos.getX()+1,rPos.getY());
     rPos.print();
   }
   else if(orientation==west&&rPos.getX()<10&&rPos.getY()<10){
     move = true;
-   cout<<"Robot is moving "<<static_cast<orientation_type>(orientation)<<endl;
+   cout<<"Robot is moving east"<<endl;
     rPos.set(rPos.getX()-1,rPos.getY());
     rPos.print();
   }
   else if(orientation==north&&rPos.getX()<10&&rPos.getY()<10){
    move=true;
-   cout<<"Robot is moving "<<static_cast<orientation_type>(orientation)<<endl;
+   cout<<"Robot is moving north"<<endl;
     rPos.set(rPos.getX(),rPos.getY()+1);
     rPos.print();
   }
   else {
     move = true;
-   cout<<"Robot is moving "<<static_cast<orientation_type>(orientation)<<endl;
+   cout<<"Robot is moving south "<<endl;
     rPos.set(rPos.getX(),rPos.getY()-1);
     rPos.print();
   }

@@ -1,8 +1,10 @@
 #include <iostream>
-#include "./World/world.h"
+#include "./Robot/robot.h"
 using namespace std;
 int main() {
-  
+  Robot r1;
+  r1.init();
+  r1.forward();
      
 }
 //Unit Testing of Point

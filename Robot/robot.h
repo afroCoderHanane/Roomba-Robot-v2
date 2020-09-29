@@ -7,7 +7,7 @@ using namespace std;
 class Robot{
   private:
     Point rPos;
-    enum orientation_type{north, south, east, west};
+    enum orientation_type{east, west,south, north };
     orientation_type orientation;
   public:
     void init();
@@ -22,4 +22,6 @@ class Robot{
     bool southEnd();
     bool zag();
     bool zig();
+    int getX();
+    int getY();    
 };

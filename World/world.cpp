@@ -11,3 +11,8 @@ void World::print()const{
 void World::set(int i, int x, int y){
     coins[i].set(x,y);
 }
+
+Point World::getCoin(int i)
+{
+  return coins[i];
+}

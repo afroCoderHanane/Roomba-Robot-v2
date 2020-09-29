@@ -8,4 +8,5 @@ class World{
   public:
     void print()const;
     void set(int i, int x, int y);
+    Point getCoin(int i);
 };

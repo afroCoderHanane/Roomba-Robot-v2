@@ -67,10 +67,16 @@ r.print();
   cout<<"----------------------------------------"<<endl;
     cout<<"I made "<<moveCount<<" moves"<<endl;
     cout<<"---------------------------------------"<<endl;
-    // for loop to put X to each coins location
   
   return 0;    
 }
+
+
+
+
+
+
+
 //Unit Testing of Point
  /*int i = 0;
   Point p[2];

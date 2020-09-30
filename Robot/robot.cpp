@@ -25,47 +25,32 @@ void Robot::setOrientation(orientation_type orientation){
 }
 //function to return true if the robot can move forward
 bool Robot::forward(){
+  bool move =  false;
   if(orientation==east){
       if(rPos.getX()<9){
         rPos.set(rPos.getX()+1,rPos.getY());
-        return true;
-      }
-      else {
-        return false;
+        move = true;
       }
   }
   else if(orientation==west){
       if(rPos.getX()>0){
         rPos.set(rPos.getX()-1, rPos.getY());
-        return true;
-      }
-      else{
-        return false;
+        move = true;
       }
   }
   else if(orientation==north){
     if (rPos.getY()<9){
-    rPos.set(rPos.getX(),rPos.getY()+1);
-    return true; 
-  }
-  else
-  {
-    return false;
-  }
+       rPos.set(rPos.getX(),rPos.getY()+1);
+       move = true;
+  } 
 }
-else if(orientation==south)
-{
-  if(rPos.getY()>0)
-  {
+else if(orientation==south){
+  if(rPos.getY()>0){
     rPos.set(rPos.getX(),rPos.getY()-1);
-    return true;
-  }
-  else
-  {
-    return false;
+    move = true;
   }
 }
-return false;
+return move;
 }
 // turn clocewise if the robot reaches the wall
 void Robot::turnCW()
@@ -95,40 +80,27 @@ void Robot::turnAntiCW()
 //return true if the north end is reach
 bool Robot::northEnd()
 {
-  if(rPos.getY()==9)
-   return true;
-  else 
-   return false;
+  return (rPos.getY()==9);
 }
 //return true if the south end is reach
 bool Robot:: southEnd()
 {
-  if(rPos.getY()==0)
-   return true;
-  else 
-   return false;
+  return (rPos.getY()==0);
 }
 //return true if the east end is reach
 bool Robot::eastEnd()
 {
-  if(rPos.getX()==9)
-   return true;
-  else
-   return false;
+  return (rPos.getX()==9);
 }
 //return true if the west end is reach
 bool Robot::westEnd()
 {
-  if(rPos.getX()==0)
-   return true;
-  else
-   return false;
+  return (rPos.getX()==0);
 }
 //return true if 
 bool Robot::zag()
 {
-  if(eastEnd())
-  {
+  if(eastEnd()){
     turnAntiCW();
     forward();
     turnAntiCW();
@@ -139,8 +111,7 @@ bool Robot::zag()
 }
 bool Robot::zig()
 {
-  if(westEnd())
-  {
+  if(westEnd()){
     turnCW();
     forward();
     turnCW();
@@ -149,12 +120,10 @@ bool Robot::zig()
   else 
     return false;
 }
-int Robot:: getX()
-{
+int Robot:: getX(){
   return rPos.getX();
 }
-int Robot:: getY()
-{
+int Robot:: getY(){
   return rPos.getY();
 }
 
